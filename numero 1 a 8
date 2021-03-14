@@ -1,0 +1,135 @@
+Ejercicios jonmircha 👍   
+✔✔ Numero1 : Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+
+const contarCadenas = (cadena = "") => 
+(!cadena)
+? console.warn("Esto no es una cadena")
+: console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`);
+
+✔✔ Numero2 : Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+
+const cortarCadenas = (cadena = "",numero = undefined) =>
+(!cadena)
+? console.warn("Esto no es una cadena oe mamon!")
+: (numero === undefined)
+    ? console.warn("No ingresaste un numero")
+    : (numero > cadena.length)
+        ? console.warn("Mucho recorte")
+        : console.info(cadena.slice(0,numero));
+        
+✔✔ Numero3 :  Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal']   
+
+const convertirCadenas = (cadena = "",separador = undefined) =>
+(!cadena)
+? console.warn("No es una cadena")
+: (separador === undefined)
+    ? console.warn("separa por algo")
+    : console.info(cadena.split(separador));
+
+
+
+✔✔ Numero 4:  Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+
+const repetidor = (cadena = "", numero = undefined) => {
+    if(!cadena) return console.warn("Debes poner una cadena")
+
+    if(numero === undefined) return console.error(" No ingresaste el numero de iteración")
+    
+    if(numero === 0) return console.error("El numero de iteración no puede ser 0")
+
+    if(Math.sign(numero) === -1) console.error("No puede iterar siendo un número negativo");
+    
+    for(i = 1; i <= numero; i++)
+            console.info(` ${cadena}, ${i}`);
+                
+}
+
+
+✔✔ Numero 5: Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH"
+//MANERA 1 :
+
+const invertir = (letras= "") => 
+(!letras)
+     ? console.error("Ingrese una cadena de texto")
+     : console.info([...letras].reverse().join(""));
+     
+     
+//MANERA 2 :
+const invertir = (letras= "") =>{
+ if(!letras) return console.error("Ingrese una cadena de texto")
+   letras = letras.split("").reverse().join("")
+   return console.info(letras);
+ }
+ 
+ 
+ ✔✔ Numero 6:Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2
+ 
+ const textoEnCadena = (cadena = "", texto = "") => {
+     if(!cadena) return console.warn("no hay")
+     if(!texto)  return console.warn("asdasd ni mrd")
+
+     let i = 0;  
+     let contador = 0;
+    
+     while(i!== -1){
+         i = cadena.indexOf(texto,i); 
+         if (i!== -1){
+            i++; 
+            contador++;
+         }
+        }
+         return console.info(`La palabra ${texto} se repite ${contador} veces`)
+        
+ }
+ 
+ ✔✔ Numero 7: Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true
+ 
+ //MANERA 1:
+ 
+ const palindromo = (string = "") => {
+    if(!string) return console.warn("No ingresaste una cadena de texto")
+    
+    if (!console.info([...string].reverse().join("") === string)) return false
+    
+//MANERA 2:
+const validando = (string = "") => {
+
+
+    if (!string) console.warn("No ingresas una cadena de texto");
+
+    
+    string = string.toUpperCase();
+    let nuevoString = string.split("").reverse().join("");
+    
+    
+    return (string === nuevoString)
+    ? console.info("Si es un palindromo")
+    : console.warn(`La palabra ${string} no es un palindormo`)
+    
+    
+    
+}
+
+✔✔ Numero 8: Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+const borrando = (texto="",borrar="")=>
+(!texto)
+    ? console.warn("No hay un texto para trabajar")
+    : (!borrar)
+        ? console.warn("Pon un texto que deseas borrar")
+        : console.info(texto.replace(new RegExp(borrar,"ig"),""));
+
+borrando("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
+
+ 
+
+
+
+    
+    
+    
+    
+    
+    
+    
+
+         
