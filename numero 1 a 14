@@ -167,12 +167,72 @@ if (Math.sign(n) === -1)        return console.error("el valor no puede ser nega
 	return console.info(`El factorial de ${n} es ${total}`); 
 }
 
-    
-    
-    
-    
-    
-    
-    
+✔✔ Numero 12: Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
 
+
+    const primos = (numero = undefined) => {
+    if (!(typeof numero === "number") ) return console.error("No ingresaste un numero")
+    if (Math.sign(numero) === -1 || Math.sign(numero)=== 0) return console.error("Ingresaste un numero incorecto")
+    if (numero === 1) return console.error("El numero no puede ser 1")
+    for (let i = 2; i < numero; i++){
+        if(numero % i === 0){
+         return console.info(`El numero ${numero} no es numero primo`)
+        }
+        else {
+         return  console.info(`El numero ${numero} si es un numero primo`)
+        }
+       
+    }
+
+}
+primos(32);
+    
+✔✔ Numero 13:Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar
+    
+    const numerito = (valor = undefined) => {
+    
+    if (valor === undefined)        return console.error("No ingresaste nada")
+    if (!(typeof valor === "number") ) return console.error("No ingresaste un numero")
+    if (Math.sign(valor) === -1 || Math.sign(valor)=== 0) return console.error("Ingresaste un valor incorecto")
+
+    return (valor % 2 === 0)
+        ? console.info(`El numero ${valor} es un numero par`)
+        :console.info(`El numero ${valor} es un numero impar`)
+
+}
+
+numerito(); 
+    
+    
+  ✔✔ Numero 14: Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+    
+    const convertir = (cantidad = undefined, grados = undefined) => {
+
+    if (cantidad === undefined)        return console.error("No ingresaste nada")
+    if (!(typeof cantidad === "number") ) return console.error("No ingresaste un numero")
+    if (Math.sign(cantidad) === -1 ) return console.error("Ingresaste un valor incorecto")
+    if (grados === undefined)       return console.warn("No ingresaste a que grados deseas convertir")
+    if (typeof grados !== "string") return console.warn("No ingresas un numero para calcular la conversion")
+    if( grados.length !== 1 || !/(C|F)/.test(grados)) return console.warn("Valor de unidad no reconocido")
+
+    if (grados === "C"){
+        return console.info(`${cantidad}° Celcius es igual a ${Math.round((cantidad * (9/5)) +32 )}`)
+    } else if (grados === "F"){
+        return console.info(`${cantidad} Fahrenheit es igual a ${Math.round(((cantidad - 32 ) * (5/9)))}C°`)
+    }
+
+}
+
+convertir(0,"F");
+
+
+✔✔ Numero 15: Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10
          
+
+
+✔✔ Numero 16: Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800
+
+
+
+
+✔✔ Numero 17:  Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
