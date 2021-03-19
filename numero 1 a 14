@@ -228,10 +228,38 @@ convertir(0,"F");
 
 ✔✔ Numero 15: Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10
          
+const convirtiendo = (numero1 = undefined, numero2 = undefined) => {
+        if (numero1 === undefined) return console.warn("No ingresaste el monto total") 
+        if (typeof numero1 !== "number" ) return console.error("No ingresaste un numero")
+        if (Math.sign(numero1) === -1 || Math.sign(numero1) === 0 ) return console.error ("El monto total ingresado es invalido")
+        if (numero2 === undefined) return console.warn("No ingresaste el monto total") 
+        if (typeof numero2 !== "number" ) return console.error("No ingresaste un numero")
+        if (Math.sign(numero2) === -1 || Math.sign(numero2) === 0 ) return console.error ("El monto total ingresado es invalido")
+
+        if (numero2 === 2){
+            return console.info(`${numero1} base ${numero2} es igual a ${parseInt(numero1,numero2)} base 10`) // el parseint recibe 100 y 2 y lo convertira a base10
+        }else if (numero2 ===10){
+            return console.info(`${numero1} base ${numero2} es igual a ${numero1.toString(2)} base 2`)   // el metodo to string indica a que base quieres convertir dicho numerp
+         }
+         
+
+
+    }
+
+    convirtiendo(114,10)
 
 
 ✔✔ Numero 16: Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800
-
+const descontar = (numero = undefined,descuento= undefined) => {
+        if (numero === undefined) return console.warn("No ingresaste el monto total") 
+        if (typeof numero !== "number" ) return console.error("No ingresaste un numero")
+        if (Math.sign(numero) === -1 || Math.sign(numero) === 0 ) return console.error ("El monto total ingresado es invalido")
+        if (descuento === undefined) return console.warn("No ingresaste el porcentaje a descontar")
+        if (typeof descuento !== "number" ) return console.error("No ingresaste un numero")
+        if (Math.sign(descuento) === -1 || Math.sign(descuento) === 0 ) return console.error ("El descuento ingresado es invalido")
+        
+        return console.info(numero - (numero * (descuento/100)))
+        
 
 
 
