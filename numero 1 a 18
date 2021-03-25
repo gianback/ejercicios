@@ -315,3 +315,120 @@ filtrando("Hola mun")
 
 ✔✔ Numero 19 : ) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
 
+const validando = (nombre) => {
+    if (!nombre) return console.warn("No ingresaste un nombre") 
+    if (typeof nombre !== "string" ) return console.error("No ingresaste una cadena de texto")
+
+    let expReg = /^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$/g.test(nombre)
+
+    return (expReg)
+        ?console.info(`${nombre} es un nombre valido`)
+        :console.info(`${nombre} no es un nombre valido`)
+
+}
+
+validando("Gian Franco")
+
+✔✔ Numero 20 : Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+
+
+
+
+
+
+✔✔ Numero 21 : Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+
+MI FORMA:
+const eleveando = (numero ) => {
+
+if (numero === undefined) return console.warn("No ingresaste nada")
+if (!( numero instanceof Array)) return console.error("No ingresaste un arreglo")
+for(let i = 0; i < numero.length; i++){
+    numero[i] *= numero[i]
+    
+}
+
+return console.info(numero)
+
+}
+
+let arreglos = [1,2,3,4,5,6,7,8,9,10]
+let cadena = "2,3,4,5"
+eleveando(arreglos)*/
+
+
+
+✔✔ Numero 22 : Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+
+MI FORMA:
+
+const numerito = (numeritos) => {
+    if (numeritos === undefined) return console.warn("No ingresaste nada")
+    if (!( numeritos instanceof Array)) return console.error("No ingresaste un arreglo")
+
+    let numeroBajo = Math.min.apply(null,numeritos)
+    let numeroAlto = Math.max.apply(null,numeritos)
+    
+    console.info(numeroBajo,numeroAlto)
+
+}
+let gasolinas = [1,2,3,4,-5,99,121431,2,-20]
+numerito(gasolinas)
+
+
+
+
+✔✔ Numero 23 :Programa una funcion que dado un array de numero devuelva un objeto con 2 arreglos en el primero almacena los numero pares y en el segundo los impares
+
+MI FORMA
+
+const arreglar = (arreglito) => {
+    if (arreglito === undefined) return console.warn("No ingresaste nada")
+    if (!( arreglito instanceof Array)) return console.error("No ingresaste un arreglo")
+    
+    let numeroPares = [];
+    let numeroImpares = [];
+    let objeto = {numeroPares,numeroImpares}
+    for(let i =0;i < arreglito.length;i++){
+        if(arreglito[i] % 2 === 0){
+            numeroPares.push(arreglito[i])
+        }else{
+            numeroImpares.push(arreglito[i])
+        }
+        
+
+    }
+    return console.info(objeto)
+
+}
+
+let HolaAmigos = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+arreglar(HolaAmigos)
+
+
+
+✔✔ Numero 24 : Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+
+
+MI FORMA
+
+const ordenando = (array ) => {
+    if (array === undefined) return console.warn("No ingresaste nada")
+    if (!( array instanceof Array)) return console.error("No ingresaste un arreglo")
+
+   console.info(array.sort(function(prev, next){ return prev - next}))   
+   console.info(array.sort(function(prev, next){ return next - prev})) 
+
+}
+
+
+
+
+
+
+
+
+
+
+
