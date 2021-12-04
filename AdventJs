@@ -1,0 +1,50 @@
+Ejercicio numero 3 
+El Grinch está abriendo las cartas que iban a Santa Claus y las está dejando hechas un lío. 😱
+
+Las cartas son una cadena de texto que incluyen regalos y paréntesis ().
+
+Para saber si una carta es válida ✅, debes comprobar que los paréntesis cierran correctamente y que, además, no vayan vacíos.
+
+¡Pero ojo! Porque el Grinch ha dejado llaves { y corchetes [ dentro de los paréntesis que hacen que no sean válidas. Por suerte sólo los ha dejado en medio de los paréntesis...
+
+Ejemplos:
+"bici coche (balón) bici coche peluche" // -> ✅
+"(muñeca) consola bici" // ✅
+
+"bici coche (balón bici coche" // -> ❌
+"peluche (bici [coche) bici coche balón" // -> ❌
+"(peluche {) bici" // -> ❌
+"() bici" // ❌
+
+
+Mi solucion:
+
+export default function isValid(letter) {
+  let letraPorLetra = letter.split("");
+  let palabrasSeparadas = letter.split(" ");
+  let parentesis = 0;
+  let corchetes = 0;
+  let resultado = false;
+
+  letraPorLetra.map((letra) => {
+    if (letra === "{" || letra === "[") corchetes++;
+    if (letra === "(") parentesis++;
+    if (letra === ")") parentesis--;
+  });
+
+  if (parentesis === 0 && corchetes === 0) {
+    resultado = true;
+    palabrasSeparadas.map((palabra) => {
+      if (palabra[0] === "(" && palabra[1] === ")") {
+        resultado = false;
+      }
+      if (palabra[0] === "(" && palabra[1] === "(") {
+        resultado = false;
+      }
+    });
+  } else {
+    return false;
+  }
+
+  return resultado;
+}
